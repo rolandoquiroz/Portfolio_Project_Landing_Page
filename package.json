@@ -1,0 +1,14 @@
+{
+  "name": "modern_landing_page",
+  "version": "1.0.0",
+  "description": "Tweets's \"Virality\" Analyzer Landing Page",
+  "main": "index.js",
+  "scripts": {
+    "sass": "node-sass -w scss/ -o dist/css/ --recursive"
+  },
+  "author": "Rolando Quiroz",
+  "license": "MIT",
+  "dependencies": {
+    "node-sass": "^4.13.1"
+  }
+}
