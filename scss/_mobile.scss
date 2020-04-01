@@ -53,12 +53,10 @@
 
   .about-info {
     grid-template-areas: 
+    'myhi'
     'bioimage'
-    'icons'
-    'bio'
-    'job1'
-    'job2'
-    'job3';
+    'ico'
+    'bio';
 
     grid-template-columns: 1fr;
   }

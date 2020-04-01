@@ -50,8 +50,9 @@ header {
 }
 
 main {
-  padding: 4rem;
-  //height: 100%;
+  padding: 6rem;
+  width: 100%;
+  height: 100%;
   min-height: calc(100vh - 60px);
 
   /* .icons {  
@@ -71,7 +72,7 @@ main {
   &#intro {
     overflow: hidden;
     h1 {
-      margin-top: 20vh;
+      margin-top: 32vh;
     }
   }
 }
@@ -80,11 +81,20 @@ main {
   display: grid;
   grid-gap: 30px;
   grid-template-areas:
-    "bioimage bio bio"
-    "icons bio bio"
-    "job1 job2 job3";
+ 
+    "myhi bio bio"
+    "bioimage bio bio" 
+    "ico bio bio";
+    //"job1 job2 job3";
 
   grid-template-columns: repeat(3, 1fr);
+
+  .my_hi {
+    grid-area: myhi;
+    margin: auto;
+    margin-top: 2.5rem;
+    margin-block-end: -2.5rem;
+  }
 
   .bio-image {
     grid-area: bioimage;
@@ -94,11 +104,12 @@ main {
   }
 
   .icons {
+    grid-area: ico;
     margin: auto;
 
     a {
       padding: 0.4rem;
-
+      color: #000;
       &:hover {
         color: $secondary-color;
         @include easeOut();
@@ -111,6 +122,7 @@ main {
     font-size: 1.5rem;
   }
 
+  
   .job-1 {
     grid-area: job1;
   }
@@ -122,12 +134,16 @@ main {
   .job-3 {
     grid-area: job3;
   }
+  
+  
 
   .job {
     background: lighten($primary-color, 5);
     padding: 0.5rem;
     border-bottom: $secondary-color 5px solid;
   }
+
+  
 }
 
 // Work/Projects
@@ -155,24 +171,40 @@ main {
     flex-wrap: wrap;
     justify-content: space-evenly;
     align-items: center;
-    margin-top: 1rem;
+    // margin-top: 1rem;
 
     div {
         font-size: 2rem;
         border: 3px #fff solid;
-        padding: 1.5rem 2.5rem;
-        margin-bottom: 3rem;
+        padding: 1.5rem 1.5rem;
+        // margin-bottom: 3rem;
         @include easeOut;
 
         &:hover {
-            padding: 0.5rem 1.5rem;
+            padding: 0.5rem 0.5rem;
             background: $secondary-color;
             color: set-text-color($secondary-color);
-            span {
+           /* span {
                 color: set-text-color($secondary-color); 
-            }
+            } */
         }
     }
+}
+
+.iframe-container {
+  overflow: hidden;
+  // Calculated from the aspect ration of the content (in case of 16:9 it is 9/16= 0.5625)
+  padding-top: 56.25%;
+  position: relative;
+}
+ 
+.iframe-container iframe {
+   border: 0;
+   height: 100%;
+   left: 0;
+   position: absolute;
+   top: 0;
+   width: 100%;
 }
 
 // Button Styles
